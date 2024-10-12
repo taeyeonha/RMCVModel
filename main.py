@@ -70,6 +70,9 @@ BATCH_SIZE = 32
 train_dataset = train_dataset.batch(BATCH_SIZE).prefetch(tf.data.AUTOTUNE)
 test_dataset = test_dataset.batch(BATCH_SIZE).prefetch(tf.data.AUTOTUNE)
 
+# Custom architecture with reference to the following papers
+# MobileNetV3: Howard et al., 2019 (arXiv:1905.02244).
+# Squeeze-and-Excitation Networks: Hu et al., 2017 (arXiv:1709.01507).
 def create_lightweight_model(input_shape):
     model = models.Sequential()
     
